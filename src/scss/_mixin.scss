@@ -1,0 +1,48 @@
+// 水平垂直居中-绝对定位
+@mixin absoluteCenterXy {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+// 水平居中-绝对定位
+@mixin absoluteCenterX {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+}
+
+// 垂直居中-绝对定位
+@mixin absoluteCenterY {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+}
+
+// 纵向水平垂直居中-flex
+@mixin flexColCenterXy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+// 水平垂直居中-flex
+@mixin flexCenterXy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 水平居中-flex
+@mixin flexCenterX {
+    display: flex;
+    justify-content: center;
+}
+
+// 垂直居中-flex
+@mixin flexCenterY {
+    display: flex;
+    align-items: center;
+}

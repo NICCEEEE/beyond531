@@ -1,0 +1,6 @@
+@import '../../../scss/_mixin';
+
+.container {
+    background: red;
+    @include flexCenterXy;
+}
