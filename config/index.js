@@ -1,3 +1,6 @@
+import path from 'path';
+
+const isDev = process.env.NODE_ENV === 'development';
 const config = {
     projectName: 'beyond531',
     date: '2021-2-8',
@@ -16,6 +19,10 @@ const config = {
         options: {}
     },
     framework: 'react',
+    alias: {
+        '@/components': path.resolve(__dirname, '..', 'src/components'),
+        '@/store': path.resolve(__dirname, '..', 'src/store')
+    },
     mini: {
         postcss: {
             pxtransform: {
@@ -29,10 +36,10 @@ const config = {
                 }
             },
             cssModules: {
-                enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+                enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
                 config: {
                     namingPattern: 'module', // 转换模式，取值为 global/module
-                    generateScopedName: '[name]__[local]___[hash:base64:5]'
+                    generateScopedName: isDev ? '[local]-[hash:base64:4]' : '[hash:base64:4]'
                 }
             }
         }
@@ -46,10 +53,10 @@ const config = {
                 config: {}
             },
             cssModules: {
-                enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
+                enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
                 config: {
                     namingPattern: 'module', // 转换模式，取值为 global/module
-                    generateScopedName: '[name]__[local]___[hash:base64:5]'
+                    generateScopedName: isDev ? '[local]-[hash:base64:4]' : '[hash:base64:4]'
                 }
             }
         }
